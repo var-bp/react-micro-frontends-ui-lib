@@ -79,20 +79,6 @@ module.exports = {
       },
     ],
   },
-  externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-    },
-    'react-dom': {
-      commonjs: 'react-dom',
-      commonjs2: 'react-dom',
-    },
-    'styled-components': {
-      commonjs: 'styled-components',
-      commonjs2: 'styled-components',
-    },
-  },
   plugins: [
     // A linter for CSS-like syntaxes like SCSS, Sass, Less and SugarSS
     new StylelintPlugin({

@@ -7,18 +7,22 @@
     "build"
   ],
   "scripts": {
-    "build": "webpack --progress --config config/webpack.prod.js",
+    "build": "webpack --progress --config webpack/webpack.prod.js",
     "lint:css": "stylelint './**/*/*.{scss,sass,css,ts,tsx,js,jsx}'",
     "lint:css:fix": "npm run lint:css -- --fix",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:js:fix": "npm run lint:js -- --fix",
-    "start": "webpack --config config/webpack.dev.js",
-    "test": "jest --config config/jest.js --passWithNoTests",
-    "test:coverage": "jest --config config/jest.js --coverage --colors --passWithNoTests",
-    "test:watch": "jest --config config/jest.js --watch"
+    "start": "webpack --config webpack/webpack.dev.js",
+    "storybook": "start-storybook -p 6006",
+    "test": "jest --config jest/jest.js --passWithNoTests",
+    "test:coverage": "jest --config jest/jest.js --coverage --colors --passWithNoTests",
+    "test:watch": "jest --config jest/jest.js --watch"
   },
   "dependencies": {
     "polished": "3.6.7",
+    "react": "16.13.1",
+    "react-app-polyfill": "1.0.6",
+    "styled-components": "5.2.0",
     "styled-media-query": "2.1.2"
   },
   "devDependencies": {
@@ -30,6 +34,10 @@
     "@babel/preset-react": "7.10.4",
     "@babel/preset-typescript": "7.10.4",
     "@babel/runtime": "7.11.2",
+    "@storybook/addon-actions": "6.0.27",
+    "@storybook/addon-essentials": "6.0.27",
+    "@storybook/addon-links": "6.0.27",
+    "@storybook/react": "6.0.27",
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.0.4",
     "@testing-library/user-event": "12.1.7",
@@ -76,7 +84,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "5.0.2",
     "prettier": "2.1.2",
-    "react-is": "16.13.1",
+    "react-is": "17.0.1",
     "stylelint": "13.7.2",
     "stylelint-config-standard": "20.0.0",
     "stylelint-webpack-plugin": "2.1.0",
@@ -85,10 +93,5 @@
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
     "webpack-merge": "5.1.4"
-  },
-  "peerDependencies": {
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "styled-components": "5.2.0"
   }
 }
