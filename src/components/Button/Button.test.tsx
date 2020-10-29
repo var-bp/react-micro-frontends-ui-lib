@@ -6,7 +6,7 @@ const defaultProps = {
   title: 'Button',
 };
 
-test('renders without crashing', () => {
+test('renders button without crashing', () => {
   // eslint-disable-next-line react/jsx-props-no-spreading
   const { getByTestId } = render(<Button {...defaultProps} />);
   const element = getByTestId('button');
