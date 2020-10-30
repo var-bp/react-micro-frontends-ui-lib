@@ -14,10 +14,16 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, '../build'),
-    library: ['react-micro-frontends-ui-lib', '[name]'],
+    // Desired name for the global variable when using as a drop-in script-tag
+    library: 'reactMicroFrontendsUiLib',
     libraryTarget: 'umd',
     // Will name the AMD module of the UMD build. Otherwise an anonymous define is used.
     umdNamedDefine: true,
+    // It makes sure that in the case of using the bundle file without a module system
+    // like AMD or CommonJS it works in the browser as well as in a Node context. The
+    // return value of the entry point will get assigned to the current this object which
+    // is window in browsers and the global object in Node.
+    globalObject: 'this',
   },
   // Some libraries import Node modules but don't use them in the browser.
   // Tell webpack to provide empty mocks for them so importing them works.
@@ -40,6 +46,17 @@ module.exports = {
     // We also include JSX as a common component filename extension to support
     // some tools.
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json'],
+  },
+  // Some libraries expose themselves differently depending on the module system that
+  // is being used, we must declare the name under which the external can be found for
+  // each of these systems
+  externals: {
+    react: {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react',
+    },
   },
   module: {
     // Makes missing exports an error instead of warning.

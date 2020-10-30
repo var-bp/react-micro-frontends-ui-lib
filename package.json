@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "React library template",
   "main": "build/components.js",
+  "types": "build/index.d.ts",
   "files": [
     "build"
   ],
@@ -20,7 +21,6 @@
   },
   "dependencies": {
     "polished": "3.6.7",
-    "react": "16.13.1",
     "react-app-polyfill": "1.0.6",
     "styled-components": "5.2.0",
     "styled-media-query": "2.1.2"
@@ -29,11 +29,9 @@
     "@babel/core": "7.11.6",
     "@babel/plugin-transform-react-constant-elements": "7.10.4",
     "@babel/plugin-transform-react-inline-elements": "7.10.4",
-    "@babel/plugin-transform-runtime": "7.11.5",
     "@babel/preset-env": "7.11.5",
     "@babel/preset-react": "7.10.4",
     "@babel/preset-typescript": "7.10.4",
-    "@babel/runtime": "7.11.2",
     "@storybook/addon-actions": "6.0.27",
     "@storybook/addon-essentials": "6.0.27",
     "@storybook/addon-links": "6.0.27",
@@ -93,5 +91,8 @@
     "webpack": "4.44.2",
     "webpack-cli": "3.3.12",
     "webpack-merge": "5.1.4"
+  },
+  "peerDependencies": {
+    "react": "16.13.1"
   }
 }

@@ -1,6 +1,5 @@
 module.exports = {
   presets: [['@babel/env', { modules: false }], '@babel/preset-typescript', '@babel/preset-react'],
-  plugins: ['@babel/plugin-transform-runtime'],
   env: {
     development: {
       plugins: [['babel-plugin-styled-components', { displayName: true }]],
