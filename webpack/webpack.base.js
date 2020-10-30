@@ -57,6 +57,12 @@ module.exports = {
       commonjs: 'react',
       amd: 'react',
     },
+    // https://styled-components.com/docs/faqs#i-am-a-library-author-should-i-bundle-styledcomponents-with-my-library
+    "styled-components": {
+      commonjs: "styled-components",
+      commonjs2: "styled-components",
+      amd: "styled-components",
+    },
   },
   module: {
     // Makes missing exports an error instead of warning.

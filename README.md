@@ -11,6 +11,10 @@ Install the project dependencies.
 ```bash
 $ npm i
 ```
+Install the `.storybook` dependencies.
+```bash
+.storybook $ npm i
+```
 
 ## Import Into Project
 If you encounter 'Invalid hook call' error after importing 'react-micro-frontends-ui-lib' for local development (npm link) please see [this](https://github.com/facebook/react/issues/15315#issuecomment-479802153).

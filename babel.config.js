@@ -20,7 +20,7 @@ module.exports = {
       plugins: [
         [
           'babel-plugin-styled-components',
-          { displayName: true, fileName: true, namespace: 'react-micro-frontends-ui-lib' },
+          { displayName: true, fileName: true },
         ],
       ],
     },
