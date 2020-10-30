@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "React library template",
   "main": "build/components.js",
-  "types": "build/index.d.ts",
   "files": [
     "build"
   ],
